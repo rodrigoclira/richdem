@@ -86,7 +86,8 @@ used [mpiP](http://mpip.sourceforge.net/) to profile the code's communication.
 The code can be downloaded [here](http://mpip.sourceforge.net/) and compiled
 with:
 
-    ./configure --with-binutils-dir=/usr/lib
+    #./configure --with-binutils-dir=/usr/lib
+    ./configure --prefix=$PWD/build CC=mpicc CXX=mpicxx CFLAGS=-fPIC --with-binutils-dir=/usr/lib --disable-libunwind
     make shared
     make install #Installs to a subdirectory of mpiP
 
