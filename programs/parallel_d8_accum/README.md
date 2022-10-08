@@ -83,10 +83,10 @@ MPI Profiling
 -------------
 Although the program tracks its total communication load internally, I have also
 used [mpiP](http://mpip.sourceforge.net/) to profile the code's communication.
-The code can be downloaded [here](http://mpip.sourceforge.net/) and compiled
-with:
+The code can be downloaded [here](http://mpip.sourceforge.net/). After extract mpiP, 
+you will need create a 'build' folder into it. 
 
-    #./configure --with-binutils-dir=/usr/lib
+    mkdir build
     ./configure --prefix=$PWD/build CC=mpicc CXX=mpicxx CFLAGS=-fPIC --with-binutils-dir=/usr/lib --disable-libunwind
     make shared
     make install #Installs to a subdirectory of mpiP
@@ -107,6 +107,14 @@ also used `/usr/bin/time` to record this. An example of such an invocation is:
 This will store memory and timing information in files beginning with the stem
 `timing`.
 
+
+</br> 
+
+> :warning: If you find any error related to the project's libraries, try to  find them in `/usr/lib/x86_64-linux-gnu/` and create the symbolic links to `/usr/lib` folder, as the exemple below. 
+
+    ln -s /usr/lib/x86_64-linux-gnu/libmpi_cxx.so.1 /usr/lib/libmpi_cxx.so.1
+    
+    ln -s /usr/lib/x86_64-linux-gnu/libmpi.so.12 /usr/lib/libmpi.so.12
 
 
 RichDEM
