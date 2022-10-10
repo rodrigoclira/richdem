@@ -76,6 +76,10 @@ the following commands:
     $ conda activate richdem
     $ conda install --file=requirements.txt -c conda-forge
 
+Before start the richdem installation, make the following packages are installed
+
+    sudo apt-get install g++ gcc build-essential
+
 Then compile using the standard `cmake` sequence:
 
     $ mkdir build
