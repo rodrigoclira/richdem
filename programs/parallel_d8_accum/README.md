@@ -102,7 +102,7 @@ with the program. To do so, run the following line immediately before launching
 Although the program tracks its maximum memory requirements internally, I have
 also used `/usr/bin/time` to record this. An example of such an invocation is:
 
-    mpirun -output-filename timing -n 4 /usr/bin/time -v ./parallel_d8_accum.exe one @offloadall dem.tif outroot -w 500 -h 500
+    mpirun -output-filename timing -n 4 /usr/bin/time -v ./parallel_d8_accum.exe one @retain dem.tif outroot%n -w 500 -h 500
 
 This will store memory and timing information in files beginning with the stem
 `timing`.
